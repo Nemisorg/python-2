@@ -1,7 +1,14 @@
+import random
+
+def checkAllesGeraden(gw, gl):
+    print("Iets")
+
+
 naam = input("Wat is je naam? ")
 print("Hallo " + naam + ", welkom bij galgje.")
 count = 0
-word = ("galgje")
+woordkeus = ("galgje", "downie", "laptop")
+word = (random.choice(woordkeus))
 goedeletters = ""
 while True:
     streep = ("_ _ _ _ _ _")
@@ -20,7 +27,10 @@ while True:
             print("Je hebt fout geraden!")
             print("Je hebt verloren!")
             break
-    elif len(goedeletters) == 6:
+    elif letter in goedeletters:
+        print ("Je hebt deze letter al genoemd. Noem een andere letter.")
+
+    elif checkAllesGeraden(goedeletters, word):
         wordguess = input("Probeer het woord maar te raden... ")
         if wordguess == word:
             print("Je hebt het woord geraden!")
